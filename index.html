@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EquityMerch</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Navbar */
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Adjust padding if necessary */
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; /* Prevents padding from affecting width */
+    }
+
+    .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Proper spacing instead of margin-left */
+    }
+
+    .navbar li {
+    display: inline-block;
+    }
+
+    .navbar a {
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 15px; /* Ensures clickable area */
+    }
+
+    .navbar .logo a {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('background.png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #fff;
+    }
+    .feature {
+      flex: 1 1 300px;
+      margin: 20px;
+      text-align: center;
+    }
+    .feature img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .feature h3 {
+      margin-top: 20px;
+    }
+    .feature p {
+      margin-top: 10px;
+      color: #666;
+    }
+    
+    /* Reviews Section */
+    .reviews {
+      background: #f4f4f4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .reviews h2 {
+      margin-bottom: 40px;
+    }
+    .review-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .review {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 10px;
+      flex: 1 1 300px;
+      border-radius: 8px;
+    }
+    .review p {
+      font-style: italic;
+      color: #555;
+    }
+    .review h4 {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      font-weight: 700;
+    }
+    
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+        <a href="#"><img src="logo.png" alt="Project Logo" style="height: 100px;"></a>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index_fr.html">🇫🇷 FR</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>EquityMerch</h1>
+      <p>Empowering Communities.</p>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <img src="image1.png" alt="Innovative Design" />
+      <h3>Beatiful, Custom Designs.</h3>
+      <p>We custom-make the best possible merch for your Community or Association. Our Full-Time designer team will do their very best to make merch you'll happily wear for years.</p>
+    </div>
+    <div class="feature">
+      <img src="image3.png" alt="Modern Coding" />
+      <h3>We Handle Everything.</h3>
+      <p>From Design, to Manufacture, to Sale, we can handle every part of your Merch Project. All while providing competitive, fair prices, and qualitative products.</p>
+    </div>
+    <div class="feature">
+      <img src="image2.png" alt="Dynamic Solutions" />
+      <h3>Shared Values</h3>
+      <p>We share your values when it comes to equity, LGBTQIA+ rights, intergration, diversity and climate awareness. Whatever your concerns, we can accomodate them.</p>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews">
+    <h2>What Our Clients Say</h2>
+    <div class="review-container">
+      <div class="review">
+        <p>"This project changed the way we think about innovation. Absolutely outstanding!"</p>
+        <h4>- Aneesh N. | Association LGBTRightsGeneva</h4>
+      </div>
+      <div class="review">
+        <p>"A perfect blend of aesthetics and functionality. Highly recommended!"</p>
+        <h4>- Aneesh N. | Association LGBTRightsGeneva</h4>
+      </div>
+      <div class="review">
+        <p>"The attention to detail and modern approach is truly inspiring."</p>
+        <h4>- Aneesh N. | Association LGBTRightsGeneva</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Connect with us:</p>
+    <a href="#">Facebook</a> |
+    <a href="#">Twitter</a> |
+    <a href="#">Instagram</a>
+  </footer>
+</body>
+</html>

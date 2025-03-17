@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - EquityMerch</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <style>
+    /* Reset default margin and padding */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Base Styles */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+    .navbar .logo a img {
+      height: 50px;
+    }
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    .navbar li {
+      display: inline-block;
+    }
+    .navbar a {
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 15px;
+    }
+
+    /* Services Page Content */
+    .services-container {
+      max-width: 1200px;
+      margin: 150px auto 40px; /* Adjusted margin to account for fixed navbar */
+      padding: 20px;
+    }
+    .service-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+      gap: 20px;
+    }
+    /* Reverse layout for even sections */
+    .service-section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .service-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+    }
+    .service-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .service-text h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .service-text p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      font-weight: 700;
+    }
+
+    /* Responsive adjustments */
+    @media(max-width: 768px) {
+      .service-section {
+        flex-direction: column;
+      }
+      .service-section img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index_fr.html"><img src="logo.png" alt="Project Logo" style="height: 100px;"></a>
+    </div>
+    <ul>
+      <li><a href="index_fr.html">Accueil</a></li>
+      <li><a href="about_fr.html">À propos</a></li>
+      <li><a href="services_fr.html">Services</a></li>
+      <li><a href="contact_fr.html">Contact</a></li>
+      <li><a href="services.html">🇬🇧 EN</a></li>
+    </ul>
+  </nav>
+
+  <!-- Services Content -->
+  <div class="services-container">
+    <div class="service-section">
+      <img src="background.png" alt="Service One">
+      <div class="service-text">
+        <h2>Merchandizing à partir d'un modèle</h2>
+        <p>
+          Sélectionnez l'un de nos modèles prêts à l'utilisation avec options de customization définies. Payez 0€ pour le design et un prix fixe par item. Contactez nous pour obtenir un devis.
+        </p>
+      </div>
+    </div>
+    <div class="service-section">
+      <img src="background.png" alt="Service Two">
+      <div class="service-text">
+        <h2>Item de Merchandizing customisé</h2>
+        <p>
+            Notre équipe de design créera un article de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour le design.
+        </p>
+      </div>
+    </div>
+    <div class="service-section">
+      <img src="background.png" alt="Service Three">
+      <div class="service-text">
+        <h2>Collection de Merchandizing complète</h2>
+        <p>
+            Notre équipe de design créera une collection d'articles de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté, en assurant une cohérence globale entre les articles. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour les designs.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Connect with us:</p>
+    <a href="#">Facebook</a> |
+    <a href="#">Twitter</a> |
+    <a href="#">Instagram</a>
+  </footer>
+</body>
+</html>

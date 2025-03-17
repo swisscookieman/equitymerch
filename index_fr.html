@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EquityMerch</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+  <style>
+    /* Styles de base */
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Navbar */
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    }
+
+    .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    }
+
+    .navbar li {
+    display: inline-block;
+    }
+
+    .navbar a {
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 15px;
+    }
+
+    .navbar .logo a {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    /* Section Héro */
+    .hero {
+      height: 100vh;
+      background: url('background.png') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    
+    /* Section Caractéristiques */
+    .features {
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #fff;
+    }
+    .feature {
+      flex: 1 1 300px;
+      margin: 20px;
+      text-align: center;
+    }
+    .feature img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .feature h3 {
+      margin-top: 20px;
+    }
+    .feature p {
+      margin-top: 10px;
+      color: #666;
+    }
+    
+    /* Section Avis */
+    .reviews {
+      background: #f4f4f4;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .reviews h2 {
+      margin-bottom: 40px;
+    }
+    .review-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .review {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 10px;
+      flex: 1 1 300px;
+      border-radius: 8px;
+    }
+    .review p {
+      font-style: italic;
+      color: #555;
+    }
+    .review h4 {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #333;
+    }
+    
+    /* Footer */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      font-weight: 700;
+    }
+    
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+        <a href="index_fr.html"><img src="logo.png" alt="Logo du Projet" style="height: 100px;"></a>
+    </div>
+    <ul>
+      <li><a href="index_fr.html">Accueil</a></li>
+      <li><a href="about_fr.html">À propos</a></li>
+      <li><a href="services_fr.html">Services</a></li>
+      <li><a href="contact_fr.html">Contact</a></li>
+      <li><a href="index.html">🇬🇧 EN</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Héro -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>EquityMerch</h1>
+      <p>Du merch de qualité pour votre communauté.</p>
+    </div>
+  </header>
+
+  <!-- Section Avis -->
+  <section class="reviews">
+    <h2>Ce que disent nos clients</h2>
+    <div class="review-container">
+      <div class="review">
+        <p>"Ce projet a changé notre vision de l'innovation. Absolument exceptionnel !"</p>
+        <h4>- Aneesh N. | Association DroitsLGBTGenève</h4>
+      </div>
+      <div class="review">
+        <p>"Un parfait mélange d'esthétique et de fonctionnalité. Hautement recommandé !"</p>
+        <h4>- Aneesh N. | Association DroitsLGBTGenève</h4>
+      </div>
+      <div class="review">
+        <p>"L'attention aux détails et l'approche moderne sont vraiment inspirantes."</p>
+        <h4>- Aneesh N. | Association DroitsLGBTGenève</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Connectez-vous avec nous :</p>
+    <a href="#">Facebook</a> |
+    <a href="#">Twitter</a> |
+    <a href="#">Instagram</a>
+  </footer>
+</body>
+</html>
