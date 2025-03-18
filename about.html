@@ -8,10 +8,9 @@
   <style>
     /* Base Styles */
     html, body {
-    margin: 0;
-    padding: 0;
+      margin: 0;
+      padding: 0;
     }
-
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -22,41 +21,63 @@
       text-decoration: none;
     }
     
+    /* Navbar */
     .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0; /* Ensures the navbar is flush at the top */
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0; /* Ensures the navbar is flush at the top */
+      width: 100%;
+      z-index: 1000;
+      box-sizing: border-box;
     }
-
     .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px; /* Proper spacing instead of margin-left */
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px; /* Proper spacing instead of margin-left */
     }
-
     .navbar li {
-    display: inline-block;
+      display: inline-block;
     }
-
     .navbar a {
-    color: #fff;
-    font-weight: 700;
-    padding: 10px 15px; /* Ensures clickable area */
+      color: #fff;
+      font-weight: 700;
+      padding: 10px 15px; /* Ensures clickable area */
     }
-
     .navbar .logo a {
+      display: flex;
+      align-items: center;
       color: #fff;
       font-size: 1.5rem;
       font-weight: 700;
+    }
+    /* Logo Versions */
+    .logo-desktop {
+      height: 100px;
+    }
+    .logo-mobile {
+      height: 80px;
+      display: none;
+    }
+    
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
     }
     
     /* About Page Content */
@@ -89,14 +110,62 @@
       margin: 0 10px;
       font-weight: 700;
     }
+    
+    /* Responsive */
+    @media(max-width: 768px) {
+      /* Swap logos: hide desktop logo, show mobile logo */
+      .logo-desktop {
+        display: none;
+      }
+      .logo-mobile {
+        display: inline;
+      }
+      
+      /* Show hamburger menu */
+      .hamburger {
+        display: flex;
+      }
+      
+      /* Hide navbar list by default on mobile */
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px; /* Adjust according to navbar height */
+        left: 0;
+        margin: 0;
+        padding: 10px 0;
+      }
+      
+      /* Display navigation list when toggled */
+      .navbar ul.active {
+        display: flex;
+      }
+      
+      .navbar li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-        <a href="index.html"><img src="logo.png" alt="Project Logo" style="height: 100px;"></a>
+      <a href="index.html">
+        <img src="logo.png" alt="Project Logo" class="logo-desktop">
+        <img src="mobile_logo.png" alt="Mobile Logo" class="logo-mobile">
+      </a>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -126,5 +195,14 @@
     <a href="#">Twitter</a> |
     <a href="#">Instagram</a>
   </footer>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar ul');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

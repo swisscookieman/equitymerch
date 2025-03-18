@@ -19,39 +19,57 @@
     
     /* Navbar */
     .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-sizing: border-box;
     }
-
     .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
     }
-
     .navbar li {
-    display: inline-block;
+      display: inline-block;
     }
-
     .navbar a {
-    color: #fff;
-    font-weight: 700;
-    padding: 10px 15px;
-    }
-
-    .navbar .logo a {
       color: #fff;
-      font-size: 1.5rem;
       font-weight: 700;
+      padding: 10px 15px;
+    }
+    .navbar .logo a {
+      display: flex;
+      align-items: center;
+    }
+    /* Logo Versions */
+    .logo-desktop {
+      height: 100px;
+    }
+    .logo-mobile {
+      height: 80px;
+      display: none; /* caché par défaut */
+    }
+    
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none; /* visible uniquement sur mobile */
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
     }
     
     /* Section Héro */
@@ -161,11 +179,49 @@
     
     /* Responsive */
     @media(max-width: 768px) {
+      /* Ajustement de la section Héro */
       .hero h1 {
         font-size: 2.5rem;
       }
       .hero p {
         font-size: 1rem;
+      }
+      
+      /* Swap logo: cacher le logo desktop et afficher le logo mobile */
+      .logo-desktop {
+        display: none;
+      }
+      .logo-mobile {
+        display: inline;
+      }
+      
+      /* Afficher le bouton hamburger */
+      .hamburger {
+        display: flex;
+      }
+      
+      /* Masquer la liste de navigation par défaut sur mobile */
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px; /* Ajuster en fonction de la hauteur de la navbar */
+        left: 0;
+        margin: 0;
+        padding: 10px 0;
+      }
+      
+      /* Afficher le menu lorsque la classe "active" est ajoutée */
+      .navbar ul.active {
+        display: flex;
+      }
+      
+      .navbar li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
       }
     }
   </style>
@@ -174,8 +230,16 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-        <a href="index_fr.html"><img src="logo.png" alt="Logo du Projet" style="height: 100px;"></a>
+      <a href="index_fr.html">
+        <img src="logo.png" alt="Logo du Projet" class="logo-desktop" style="height: 100px;">
+        <img src="mobile_logo.png" alt="Logo Mobile" class="logo-mobile" style="height: 80px;">
+      </a>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <ul>
       <li><a href="index_fr.html">Accueil</a></li>
       <li><a href="about_fr.html">À propos</a></li>
@@ -219,5 +283,14 @@
     <a href="#">Twitter</a> |
     <a href="#">Instagram</a>
   </footer>
+
+  <!-- JavaScript pour le Hamburger Menu -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar ul');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

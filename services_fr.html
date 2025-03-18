@@ -35,8 +35,20 @@
       z-index: 1000;
       box-sizing: border-box;
     }
+    .navbar .logo a {
+      display: flex;
+      align-items: center;
+    }
     .navbar .logo a img {
-      height: 50px;
+      /* Desktop logo is shown by default */
+    }
+    /* Logo Versions */
+    .logo-desktop {
+      height: 100px;
+    }
+    .logo-mobile {
+      height: 80px;
+      display: none;
     }
     .navbar ul {
       list-style: none;
@@ -54,6 +66,21 @@
       padding: 10px 15px;
     }
 
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .hamburger .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+    }
+
     /* Services Page Content */
     .services-container {
       max-width: 1200px;
@@ -67,9 +94,9 @@
       gap: 20px;
     }
     /* Reverse layout for even sections */
-    .service-section:nth-child(even) {
+    /*.service-section:nth-child(even) {
       flex-direction: row-reverse;
-    }
+    }*/
     .service-section img {
       width: 100%;
       max-width: 500px;
@@ -104,6 +131,42 @@
 
     /* Responsive adjustments */
     @media(max-width: 768px) {
+      /* Swap logos: hide desktop, show mobile */
+      .logo-desktop {
+        display: none;
+      }
+      .logo-mobile {
+        display: inline;
+      }
+      
+      /* Show hamburger menu */
+      .hamburger {
+        display: flex;
+      }
+      
+      /* Hide navbar list by default on mobile */
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px; /* Adjust according to navbar height */
+        left: 0;
+        margin: 0;
+        padding: 10px 0;
+      }
+      /* Show nav menu when toggled */
+      .navbar ul.active {
+        display: flex;
+      }
+      .navbar li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+      
+      /* Service sections stack vertically */
       .service-section {
         flex-direction: column;
       }
@@ -117,8 +180,16 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
-        <a href="index_fr.html"><img src="logo.png" alt="Project Logo" style="height: 100px;"></a>
+      <a href="index_fr.html">
+        <img src="logo.png" alt="Project Logo" class="logo-desktop">
+        <img src="mobile_logo.png" alt="Mobile Logo" class="logo-mobile">
+      </a>
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <ul>
       <li><a href="index_fr.html">Accueil</a></li>
       <li><a href="about_fr.html">À propos</a></li>
@@ -144,7 +215,7 @@
       <div class="service-text">
         <h2>Item de Merchandizing customisé</h2>
         <p>
-            Notre équipe de design créera un article de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour le design.
+          Notre équipe de design créera un article de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour le design.
         </p>
       </div>
     </div>
@@ -153,7 +224,7 @@
       <div class="service-text">
         <h2>Collection de Merchandizing complète</h2>
         <p>
-            Notre équipe de design créera une collection d'articles de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté, en assurant une cohérence globale entre les articles. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour les designs.
+          Notre équipe de design créera une collection d'articles de merchandising sur mesure pour correspondre à l’identité, l’esthétique et les valeurs de votre association ou communauté, en assurant une cohérence globale entre les articles. Plusieurs révisions peuvent être effectuées selon vos retours. Payez un petit frais de conception et un prix fixe par article, ou optez simplement pour un paiement uniquement pour les designs.
         </p>
       </div>
     </div>
@@ -166,5 +237,14 @@
     <a href="#">Twitter</a> |
     <a href="#">Instagram</a>
   </footer>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar ul');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
